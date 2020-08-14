@@ -7,7 +7,7 @@ function ImageNavBox(props) {
   const [text] = useState(title);
 
   const handleClick = e => {
-    window.location.assign(`/rick-and-morty/${text}`);
+    window.location.assign(`/rick-and-morty#/${text}`);
   };
 
   const padding = title === "Locations" ? "12vh" : "4vh";
