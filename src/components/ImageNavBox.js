@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import ImageNavItem from "./ImageNavItem";
+import { Link } from "react-router-dom";
 
 function ImageNavBox(props) {
   const { source, title } = props;
 
   const [text] = useState(title);
-
-  const handleClick = e => {
-    window.location.assign(`/rick-and-morty#/${text}`);
-  };
 
   const padding = title === "Locations" ? "12vh" : "4vh";
   const imageBoxStyle = {
@@ -29,11 +26,13 @@ function ImageNavBox(props) {
     filter: "drop-shadow(0 0 70px black)"
   };
   return (
-    <div style={imageBoxStyle} className="img-Box" onClick={handleClick}>
-      <ImageNavItem source={source} />
-      <h1 style={headingStyle} className="">
-        {title}
-      </h1>
+    <div style={imageBoxStyle} className="img-Box">
+      <Link to={text}>
+        <ImageNavItem source={source} />
+        <h1 style={headingStyle} className="">
+          {title}
+        </h1>
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "../imgs/Heading.png";
+import { Link } from "react-router-dom";
 
 const Styles = {
   bannerStyle: {
@@ -17,15 +18,9 @@ function Header() {
   return (
     <React.Fragment>
       <div className="banner" style={Styles.bannerStyle}>
-        <img
-          src={Banner}
-          className=""
-          style={Styles.imageStyle}
-          alt=""
-          onClick={() => {
-            window.location.assign("/rick-and-morty");
-          }}
-        />
+        <Link to="/">
+          <img src={Banner} className="" style={Styles.imageStyle} alt="" />
+        </Link>
       </div>
     </React.Fragment>
   );
