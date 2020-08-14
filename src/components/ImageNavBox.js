@@ -29,7 +29,7 @@ function ImageNavBox(props) {
     filter: "drop-shadow(0 0 70px black)"
   };
   return (
-    <div style={imageBoxStyle} className="img-Box" handleClick={handleClick}>
+    <div style={imageBoxStyle} className="img-Box" onClick={handleClick}>
       <ImageNavItem source={source} />
       <h1 style={headingStyle} className="">
         {title}

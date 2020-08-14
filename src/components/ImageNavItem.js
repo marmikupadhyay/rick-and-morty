@@ -11,7 +11,7 @@ function ImageNavItem(props) {
   };
 
   return (
-    <div style={navItemStyle} onClick={props.handleClick}>
+    <div style={navItemStyle}>
       <img src={props.source} className="img-Item" style={imageStyle} alt="" />
     </div>
   );
