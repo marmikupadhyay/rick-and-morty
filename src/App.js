@@ -1,25 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import "./App.css";
+import Header from "./components/Header";
+import ImageNav from "./components/ImageNav";
+import Footer from "./components/Footer";
+import CharactersContainer from "./components/CharactersContainer";
+import LoactionsContainer from "./components/LocationsContainer";
+import EpisodesContainer from "./components/EpisodesContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <React.Fragment>
+        <Header />
+        <Route
+          exact
+          path="/"
+          render={props => {
+            return <ImageNav />;
+          }}
+        ></Route>
+        <Route
+          exact
+          path="/characters"
+          render={props => {
+            return (
+              <React.Fragment>
+                <CharactersContainer />
+              </React.Fragment>
+            );
+          }}
+        ></Route>{" "}
+        <Route
+          exact
+          path="/locations"
+          render={props => {
+            return (
+              <React.Fragment>
+                <LoactionsContainer />
+              </React.Fragment>
+            );
+          }}
+        ></Route>
+        <Route
+          exact
+          path="/episodes"
+          render={props => {
+            return (
+              <React.Fragment>
+                <EpisodesContainer />
+              </React.Fragment>
+            );
+          }}
+        ></Route>
+        <Footer />
+      </React.Fragment>
+    </Router>
   );
 }
 
