@@ -23,7 +23,7 @@ function Header() {
           style={Styles.imageStyle}
           alt=""
           onClick={() => {
-            window.location.assign("/");
+            window.location.assign("/rick-and-morty");
           }}
         />
       </div>
